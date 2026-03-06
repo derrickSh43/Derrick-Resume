@@ -9,6 +9,20 @@ npm install
 npm run dev
 ```
 
+## Cloudflare Workers
+
+This repo now includes the official Cloudflare Next.js adapter setup:
+
+```bash
+npm install
+npm run cf:build
+npm run preview
+npm run deploy
+```
+
+Cloudflare requires [wrangler.jsonc](./wrangler.jsonc) and [open-next.config.ts](./open-next.config.ts) for this project shape.
+The OpenNext build completes successfully on this repo. Local `wrangler` preview on native Windows can be unreliable; use WSL or Linux if preview fails locally.
+
 ## Content Model
 
 - Curated site content lives in `lib/site-data.ts`.
@@ -35,3 +49,4 @@ npm run dev
 - Keep secrets server-side only.
 - Replace the placeholder sitemap domain in `app/sitemap.ts`.
 - Add verified public contact details before production deployment.
+- For Cloudflare Workers, this repo uses `@opennextjs/cloudflare` and `wrangler`.

@@ -23,6 +23,15 @@ npm run deploy
 Cloudflare requires [wrangler.jsonc](./wrangler.jsonc) and [open-next.config.ts](./open-next.config.ts) for this project shape.
 The OpenNext build completes successfully on this repo. Local `wrangler` preview on native Windows can be unreliable; use WSL or Linux if preview fails locally.
 
+In Cloudflare Workers Builds, use:
+
+```bash
+Build command: npx @opennextjs/cloudflare build
+Deploy command: npx @opennextjs/cloudflare deploy
+```
+
+If Cloudflare skips a separate build phase in your setup, `npm run deploy` is also safe because it now runs both the OpenNext build and deploy steps.
+
 ## Content Model
 
 - Curated site content lives in `lib/site-data.ts`.
